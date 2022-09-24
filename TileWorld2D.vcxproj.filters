@@ -27,10 +27,10 @@
     <ClCompile Include="gameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="renderManager.cpp">
+    <ClCompile Include="resourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="resourceManager.cpp">
+    <ClCompile Include="world.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,19 +44,16 @@
     <ClInclude Include="tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="declarations.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="gameSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gameApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="renderManager.h">
+    <ClInclude Include="resourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resourceManager.h">
+    <ClInclude Include="world.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,7 +9,7 @@
 class tile 
 {
 	public:
-		sf::Sprite tile;
+		sf::Sprite sprite;
 
 		int ID = 0;
 
@@ -24,6 +24,6 @@ class tile
 
 		void applyTexture(sf::Texture tileTexture) 
 		{
-			tile.setTexture(tileTexture);
+			sprite.setTexture(tileTexture);
 		}
 };

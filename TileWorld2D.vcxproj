@@ -142,19 +142,18 @@
     <ClCompile Include="gameApp.cpp" />
     <ClCompile Include="gameloading.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="renderManager.cpp" />
     <ClCompile Include="resourceManager.cpp" />
     <ClCompile Include="tile.cpp" />
+    <ClCompile Include="world.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="declarations.h" />
     <ClInclude Include="gameApp.h" />
     <ClInclude Include="gameSettings.h" />
-    <ClInclude Include="renderManager.h" />
     <ClInclude Include="resourceManager.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="world.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

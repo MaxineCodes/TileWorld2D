@@ -5,7 +5,7 @@
 // Entrypoint of the program
 int main()
 {
-    // Declare game framework "game" as "gameApplication"
+    // Declare game framework "gameapp" as "app"
     gameapp app;
 
     // Application Loop

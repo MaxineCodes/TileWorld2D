@@ -1,15 +1,21 @@
 #include "gameSettings.h"
 #include "gameApp.h"
-#include "renderManager.h"
+#include "world.h"
 
-// Declare renderManager Class as "renderer"
-renderManager renderer;
-// Declare gameSettings Class as "settings"
-gameSettings settings;
 
-// ----------------------------------------------------------------------
-// Private Functions:
-// 
+// Game Constructor
+gameapp::gameapp()
+{
+	this->initializeVariables();
+	this->initializeWindow();
+}
+
+// Game Destructor
+gameapp::~gameapp()
+{
+	delete this->window;
+}
+
 
 void gameapp::initializeVariables() 
 {
@@ -17,35 +23,17 @@ void gameapp::initializeVariables()
 	this->window = nullptr;
 }
 
+// Initialize a window object
 void gameapp::initializeWindow()
 {
+	// Declare gameSettings Class as "settings"
+	gameSettings settings;
 
 	this->videoMode.width = settings.windowWidth;
 	this->videoMode.height = settings.windowHeight;
 
 	this->window = new sf::RenderWindow(this->videoMode, settings.windowTitle);
 }
-
-// ----------------------------------------------------------------------
-// Constructor / Destructor:
-// 
-
-// Game Constructor
-gameapp::gameapp() 
-{
-	this->initializeVariables();
-	this->initializeWindow();
-}
-
-// Game Destructor
-gameapp::~gameapp() 
-{
-	delete this->window;
-}
-
-// ----------------------------------------------------------------------
-// Public Functions:
-// 
 
 // Return window is running
 const bool gameapp::isRunning() const
@@ -78,24 +66,29 @@ void gameapp::events()
 	}
 }
 
-
+// Game updates
 void gameapp::update()
 {
 	// Check for events
 	this->events();
+
+	world::testFunction();
 }
 
+// Game sprite rendering
 void gameapp::render() 
 {
-	// Clear everything, with Magenta background
+	// Renders every Sprite object in class vector renderQueue 
+
+	// Clear everything, with Magenta colour background (Magenta is easier to debug visual issues with)
 	this->window->clear(sf::Color::Magenta);
 
-	// Declare renderManager Class
-	renderManager renderer;
-	renderer.render();
-
-	// Draw calls here
-	this->window->draw(renderer.renderOutput);
+	// Iterate on each item in renderQueue and draw
+	int renderQueueSize = std::size(renderQueue);
+	for (int i = 0; i < renderQueueSize; i++) 
+	{
+		this->window->draw(renderQueue[i]);
+	}
 
 	// Display to window
 	this->window->display();
